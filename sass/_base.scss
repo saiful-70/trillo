@@ -1,0 +1,155 @@
+/*
+--------------------------------------------------
+Variables
+--------------------------------------------------
+*/
+
+:root {
+
+//COLORS
+//-------
+
+--color-primary: #eb0f64;
+--color-primary-light: #FF3364;
+--color-primary-dark: #BA263D;
+
+--color-grey-light-0: #f4f2f2;
+--color-grey-light-1: #faf9f9;
+--color-grey-light-2: #f0eeee;
+--color-grey-light-3: #ccc;
+
+--color-grey-dark-0: #999;
+--color-grey-dark-1: #777;
+--color-grey-dark-2: #333;
+
+//utilitis
+//-------------------
+
+--box-shadow-light-3: 0 .5rem 1rem rgba(0, 0, 0, 0.055);
+
+--box-shadow-dark-1: 0 .5rem 1rem rgba(0, 0, 0, 0.308);
+--box-shadow-dark-2: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+--box-shadow-dark-3: 0 2rem 6rem rgba(0, 0, 0, 0.308);
+}
+
+//---------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after  {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+    @include respond(medium-large) {
+        font-size: 56.5%;
+    }
+
+    @include respond(medium) {
+        font-size: 50%;
+    }
+}
+
+body {
+    // font-size: 1.4;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+    background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
+
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--box-shadow-dark-3);
+
+    @include respond(large) {
+        margin: 0;
+    }
+}
+
+.header {
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--color-grey-light-2);
+
+    @include center-all;
+    justify-content: space-between;
+
+    @include respond(small) {
+        flex-wrap: wrap;
+        height: 12rem;
+        align-content: space-around;
+    }
+}
+
+.content {
+    display: flex;
+
+    @include respond(medium) {
+        flex-direction: column;
+    }
+}
+
+.side-bar {
+    background-color: var(--color-grey-dark-2);
+
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond(medium) {
+        flex: 1;
+    }
+}
+
+.hotel-view {
+    flex: 1;
+    background-color: var(--color-grey-light-0);
+}
+
+// =======hotel details======
+
+.details {
+    display: flex;
+    margin: 5rem;
+
+    @include respond(medium-large) {
+        margin: 4rem;
+    }
+
+    @include respond(medium) {
+        margin: 3rem;
+    }
+
+    @include respond(small) {
+        flex-direction: column;
+    }
+}
+
+.footer {
+    background-color: var(--color-grey-dark-2);
+    color: var(--color-grey-light-0);
+    height: 8rem;
+    width: 100%;
+    font-size: 1.8rem;
+    display: none;
+    
+        @include respond(medium) {
+        display: block;
+        @include center-all;
+    }
+
+    
+}
